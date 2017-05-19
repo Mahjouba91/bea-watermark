@@ -1,15 +1,15 @@
 <?php
 /*
- Plugin Name: BEA Watermark
- Version: 1.0.2
+ Plugin Name: Be API - Watermark
+ Version: 1.0.3
  Description: Add watermark to the images if needed
- Author: BeApi
+ Author: Be API
  Author URI: http://www.beapi.fr
  Domain Path: languages
  Text Domain: bea-watermark
  ----
 
- Copyright 2015 Beapi (human@beapi.fr)
+ Copyright 2017 Be API (human@beapi.fr)
 
  This program is free software; you can redistribute it and/or modify
  it under the terms of the GNU General Public License as published by
@@ -33,7 +33,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 
 // Plugin constants
-define( 'BEA_WM_VERSION', '1.0.2' );
+define( 'BEA_WM_VERSION', '1.0.3' );
 define( 'BEA_WM_MIN_PHP_VERSION', '5.4' );
 define( 'BEA_WM_VIEWS_FOLDER_NAME', 'bea-watermark' );
 define( 'BEA_WM_META_NAME', 'bea_watermark' );

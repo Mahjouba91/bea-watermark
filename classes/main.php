@@ -1,13 +1,14 @@
 <?php
 namespace BEA\WM;
 
-
 /**
- * Class Client
+ * Class Main
+ * @package BEA\WM
  */
 class Main {
+
 	/**
-	 *
+	 * Main constructor.
 	 */
 	function __construct() {
 		// Load translation
@@ -24,6 +25,9 @@ class Main {
 
 		// Add watermark on content
 		add_filter( 'the_content', array( __CLASS__, 'the_content' ) );
+
+		// Add data-watermark attribute to images with watermark
+		add_filter( 'wp_get_attachment_image_attributes', array( __CLASS__, 'wp_get_attachment_image_attributes' ), 10, 2 );
 	}
 
 	/**
@@ -44,7 +48,6 @@ class Main {
 	 * @return array
 	 */
 	public static function wp_get_attachment_image_attributes( $attributes = array(), $att = 0 ) {
-		;
 		if ( ! self::is_image_eligible( $att->ID ) ) {
 			return $attributes;
 		}
@@ -63,9 +66,9 @@ class Main {
 	 * @return bool
 	 */
 	public static function is_image_eligible( $id ) {
-		$bea_rewrite = get_post_meta( $id, BEA_WM_META_NAME, true );
+		$bea_watermark = get_post_meta( $id, BEA_WM_META_NAME, true );
 
-		return ! empty( $bea_rewrite );
+		return ! empty( $bea_watermark );
 	}
 
 	/**

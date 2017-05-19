@@ -2,14 +2,14 @@
 
 namespace BEA\WM\Admin;
 
-use BEA\WM as Client;
-
 /**
  * Class Main
+ * @package BEA\WM\Admin
  */
 class Main {
+
 	/**
-	 *
+	 * Main constructor.
 	 */
 	function __construct() {
 		// Display data
@@ -24,7 +24,6 @@ class Main {
 
 	/**
 	 * Add the form field to the right media
-	 *
 	 *
 	 * @param array $form_fields
 	 * @param \WP_Post $attachment
